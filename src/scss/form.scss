@@ -1,0 +1,100 @@
+.rageform {
+    position: absolute;
+    width: 45%;
+    height: 20%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search {
+    position: relative;    
+
+    &__input {
+        width: 0;
+        border-bottom: 1px solid transparent;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        background-color: transparent;
+        transition: all 0.65s ease;
+        color: #fff;
+        font-family: sans-serif;      
+
+        &.open {
+            width: 200px;
+            padding: 5px 10px;            
+            border-radius: 0;
+            border-bottom: 1px solid #ccc;            
+            outline: none;            
+        }                       
+    }     
+
+    &__label {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        display: block;
+        width: 20px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            right: -3px;
+            bottom: -10px;
+            width: 1px;
+            height: 13px;
+            background-color: #ccc;
+            transform: rotate(-45deg);
+        }
+    }
+
+    .open + &__label {
+        right: -50px;  
+        opacity: 0;           
+    }
+
+    &__close {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        z-index: 3;
+        display: block;
+        right: 7px;
+        top: 8px;
+        width: 13px;
+        height: 13px;            
+        cursor: pointer;            
+        
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;              
+            width: 1px;
+            height: 100%;
+            background-color: #fff;
+            transform: rotate(45deg);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;              
+            width: 1px;
+            height: 100%;
+            background-color: #fff;
+            transform: rotate(-45deg);
+        }            
+    }
+    
+
+}
