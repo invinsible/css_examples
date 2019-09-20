@@ -2,10 +2,61 @@ body {
     background-color: #083248; 
 }
 
-.container {
-    height: 100vh;
-    position: relative;
+.dashed-block {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    height: 20vh;
+    border: 2px dashed #ccc;    
+}
+
+.fix-wrapper {    
+    width: 1200px;
+}
+
+.max-fix-wrapper {
+    max-width: 1200px;
+}
+
+.percent-wrapper {
+    width: 62.5%;
+}
+
+@media (max-width: 768px) {
+    .fix-wrapper {
+        width: 768px;
+    }
+
+    .percent-wrapper {
+        width: 90%;
+    }
+}
+
+
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    display: flex;   
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 2px solid #ccc;
+}
+
+.article {
+    flex: 1;
+    padding: 20px;
+    border: 1px dashed #ccc;
+    background-color: green;
+    margin-bottom: 10px;
+}
+
+.main-column {
+    flex: 2;
 }
