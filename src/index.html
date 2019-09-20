@@ -9,12 +9,24 @@
 </head>
 <body>
     <div class="container">
-        <form class="search" action="#" method="POST">
-            <input class="search__input" id="search-input" type="text">
-            <label class="search__label" for="search-input"></label>
-            <span class="search__close"></span>            
-        </form>
-    </div>    
+        <div class="shops">
+            <h1>Shops</h1>
+            <div class="shops__list"></div>
+        </div>
+    </div>
+    
+    <template id="shop-template">        
+        <div class="shops__item">
+            <img src="" alt="">
+            <h3></h3>                        
+            <div class="description">
+                <span class="description__item price"></span>
+                <ul class="kitchen"></ul>
+                <p class="delivery"></p>
+            </div>
+            
+        </div>
+    </template>
     <script src="/js/main.js"></script>
 </body>
 </html>

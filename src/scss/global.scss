@@ -1,11 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {    
-    background-color: #083248; 
+    background-color: #fff; 
+}
+
+h1 {
+    color: #fff;
 }
 
 .container {
-    height: 100vh;
-    position: relative;
+    margin: auto;
+    max-width: 800px;
+}
+
+.shops {
+
+    &__list {        
+        display: flex;
+        justify-content: space-around;        
+        flex-wrap: wrap;        
+    }
+
+    &__item {   
+        margin: 10px;     
+        width: 30%;
+        min-height: 250px;
+        background-color: #ccc;
+        text-align: center;
+    }
+}
+
+.kitchen {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    list-style: none;
+
+    li {
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: '';
+            margin-right: 10px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+    }
 }
