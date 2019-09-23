@@ -8,12 +8,48 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="shops">
-            <h1>Shops</h1>
-            <div class="shops__list"></div>
+    <header class="page-header">
+        <div class="container page-header__wrapper">
+            <a class="logo">
+                <img src="/img/logo.svg" alt="Logo Uber Eats">
+            </a>
+            <div class="location">
+                <form class="location_form" action="#">
+                    <input class="location__input" type="text" placeholder="ASAP">
+                    <span class="location__text">to</span>
+                    <input class="location__input location__input_street" type="text" placeholder="Street">
+                    <button class="location__btn"></button>
+                </form>
+            </div>        
+            <div class="user">
+                <form class="user__form" action="#">
+                    <button class="user__btn">Sign In</button>
+                    <button class="user__btn user__btn_black">Register</button>
+                    <a class="user__cart" href="#">
+                        <img src="#" alt="Cart icon">
+                    </a>
+                </form>
+            </div>
+        </div>        
+    </header>
+
+    <main>
+        <div class="container">
+            <form class="search" action="#">
+                <label for="searchInput">Search for restaurant or cuisine</label>
+                <input class="search__input" id="searchInput" type="text">
+            </form>
+            <div class="shops">            
+                <div class="shops__list"></div>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <footer class="page-footer">
+
+    </footer>
+
+    
     
     <template id="shop-template">        
         <div class="shops__item">

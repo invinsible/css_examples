@@ -1,0 +1,9 @@
+.page-header {
+    padding: 16px 0;
+    box-shadow: 0px 0px 16px rgba(38, 38, 38, 0.16);
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+}
