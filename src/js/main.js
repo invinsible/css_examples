@@ -4,7 +4,7 @@ request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 request.onload = function() {
-    var shops = request.response;
+    let shops = request.response;
     viewResult(shops);
 };
 
