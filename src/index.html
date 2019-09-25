@@ -40,7 +40,8 @@
                 <label class="search__label" for="searchInput">Search for restaurant or cuisine</label>
                 <input class="search__input" id="searchInput" type="text">
             </form>
-            <div class="shops">            
+            <div class="shops">
+                <h2>Moscow Restaurants</h2>            
                 <div class="shops__list"></div>
             </div>
         </div>
@@ -54,14 +55,13 @@
     
     <template id="shop-template">        
         <div class="shops__item">
-            <img src="" alt="">
+            <img class="shops__img" src="" srcset="" alt="">
             <h3></h3>                        
             <div class="description">
                 <span class="description__item price"></span>
-                <ul class="kitchen"></ul>
-                <p class="delivery"></p>
-            </div>
-            
+                <ul class="kitchen"></ul>                
+            </div>  
+            <p class="delivery"></p>          
         </div>
     </template>
     <script src="/js/main.js"></script>

@@ -10,14 +10,20 @@ request.onload = function() {
 
 const viewResult = (jsonObj) => {
 
+    // Находим template, его контент и создаем новый фрагмент
     const shopsList = document.querySelector('.shops__list');
     const shopTemplate = document.querySelector('#shop-template').content.querySelector('.shops__item');
     const fragment = document.createDocumentFragment();       
 
-    updateText = (node, response) => {        
-        let shopH3 = node.querySelector('h3');  
+    updateText = (node, response) => {
+        // Записываем данные в переменные
         let price = response.averagePrice;
+        let img = response.images;
+        
+        // Находим нужные элементы в template
+        let shopH3 = node.querySelector('h3');
         let shopPrice = node.querySelector('.price');    
+        let shopImg = node.querySelector('.shops__img');
         
         // Выводим на страницу количество знаков рублей
         for(let i = 1; i <= price; i++){
@@ -25,7 +31,12 @@ const viewResult = (jsonObj) => {
         }
 
         // Выводим название магазина и его локацию
-        shopH3.innerText = response.name + ' — ' + response.location;        
+        shopH3.innerText = response.name + ' — ' + response.location;
+        
+        // Вставляем картинку
+        shopImg.alt = response.name;
+        shopImg.src = img.normal;
+        shopImg.srcset = img.retina + ' 2x';
     };
 
     updateArray = (node, array) => {
