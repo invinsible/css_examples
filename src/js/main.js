@@ -1,14 +1,24 @@
-const requestURL = 'https://raw.githubusercontent.com/cmrt2/test-task/master/restaurants.json';
-const request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
-request.onload = function() {
-    let shops = request.response;
-    viewResult(shops);
+
+// Объект с ссылками на JSON-данные
+const jsonURLs = {
+    restoraunts: 'https://raw.githubusercontent.com/cmrt2/test-task/master/restaurants.json'
 };
 
-const viewResult = (jsonObj) => {
+// Функция получения и обработки данных по указанным аргументам
+const createRequest = (url, handler) => {
+    let request = new XMLHttpRequest();
+    request.responseType = 'json';
+
+    request.addEventListener('load', function(){
+        handler(request.response)
+    });
+
+    request.open('GET', url);    
+    request.send();
+};
+
+
+const viewRestoraunts = (jsonObj) => {
 
     // Находим template, его контент и создаем новый фрагмент
     const shopsList = document.querySelector('.shops__list');
@@ -64,3 +74,4 @@ const viewResult = (jsonObj) => {
     shopsList.append(fragment);
 }
 
+createRequest(jsonURLs.restoraunts, viewRestoraunts);
