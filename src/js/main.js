@@ -1,7 +1,17 @@
+class Item {
+    constructor (object) {
+        for (let key in object) {
+            if (object.hasOwnProperty(key)) {
+                this[key] = object[key];                
+            }
+        }
+    }
+}
+
 
 // Объект с ссылками на JSON-данные
 const jsonURLs = {
-    restoraunts: 'https://raw.githubusercontent.com/cmrt2/test-task/master/restaurants.json'
+    restaurants: 'https://raw.githubusercontent.com/cmrt2/test-task/master/restaurants.json'
 };
 
 // Функция получения и обработки данных по указанным аргументам
@@ -10,7 +20,11 @@ const createRequest = (url, handler) => {
     request.responseType = 'json';
 
     request.addEventListener('load', function(){
-        handler(request.response)
+        
+        const templates = request.response.map(element => createShop(element));
+        const html = templates.join(' ');
+        document.querySelector('.shops__list').innerHTML = html;
+        //handler(request.response);
     });
 
     request.open('GET', url);    
@@ -18,7 +32,7 @@ const createRequest = (url, handler) => {
 };
 
 
-const viewRestoraunts = (jsonObj) => {
+const viewRestaurants = (jsonObj) => {
 
     // Находим template, его контент и создаем новый фрагмент
     const shopsList = document.querySelector('.shops__list');
@@ -74,4 +88,19 @@ const viewRestoraunts = (jsonObj) => {
     shopsList.append(fragment);
 }
 
-createRequest(jsonURLs.restoraunts, viewRestoraunts);
+createRequest(jsonURLs.restaurants, viewRestaurants);
+
+
+function createShop (shop) {
+    return `
+        <div class="shops__item">
+            <img class="shops__img" src="${shop.images.normal}" srcset="${shop.images.retina}" alt="">
+            <h3>${shop.name}</h3>                        
+            <div class="description">
+                <span class="description__item price">${shop.averagePrice}</span>
+                <ul class="kitchen">${shop.kitchens.join(' • ')}</ul>                
+            </div>  
+            <p class="delivery">${shop.timeOfDelivery.join(' - ')} Min</p>
+        </div>    
+    `
+};

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>R Form</title>
+    <title>Inner page</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header class="page-header">
-        <div class="container page-header__wrapper">
+        <!-- <div class="container page-header__wrapper">
             <a class="logo">
                 <img src="/img/logo.svg" alt="Logo Uber Eats">
             </a>
@@ -31,41 +31,20 @@
                     <img src="/img/basket.svg" alt="Cart icon">
                 </a>
             </div>
-        </div>        
+        </div>         -->
     </header>
 
-    <main class="page-main">
-        <div class="container">
-            <form class="search" action="#">
-                <label class="search__label" for="searchInput">Search for restaurant or cuisine</label>
-                <input class="search__input" id="searchInput" type="text">
-            </form>
-            <div class="shops">
-                <h2>Moscow Restaurants</h2>            
-                <div class="shops__list"></div>
-            </div>
-        </div>
+    <main id="app">
+            
     </main>
 
-    <footer class="page-footer">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-    </footer>
+    <!-- <script src="/js/react-jsx.js" ></script> -->
+    <script src="/js/inner.js" type="text/babel"></script>
 
-    
-    
-    <template id="shop-template">        
-        <div class="shops__item">
-            <img class="shops__img" src="" srcset="" alt="">
-            <h3></h3>                        
-            <div class="description">
-                <span class="description__item price"></span>
-                <ul class="kitchen"></ul>                
-            </div>  
-            <p class="delivery"></p>          
-        </div>
-    </template>
    
-
-    <script src="/js/main.js"></script>
 </body>
 </html>
