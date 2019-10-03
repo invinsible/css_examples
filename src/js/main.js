@@ -91,6 +91,8 @@ const viewRestaurants = (jsonObj) => {
 createRequest(jsonURLs.restaurants, viewRestaurants);
 
 
+//ES6
+
 function createShop (shop) {
     return `
         <div class="shops__item">
